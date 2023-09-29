@@ -1,0 +1,22 @@
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 70vh;
+    h3 {
+       font-size: 16px;
+       font-weight: bold;
+       color: #221b22;
+    }
+    button {
+        padding: 3px 10px;
+        font-size: 14px;
+        background-color: #04233d;
+        color: #ffffff;
+        text-transform: capitalize;
+        border-radius: 6px;
+    }
+}

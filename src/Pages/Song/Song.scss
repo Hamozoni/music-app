@@ -1,0 +1,166 @@
+@import "../../ClobalStyle/BreakPoints";
+.artest {
+    position: relative;
+    .artest-page {
+        background-color: #ededed;
+        .artest-img-box {
+            border-radius: 10px;
+            transition: all .4s;
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px 1px #7a7a7a;
+            }
+            .overlay {
+                border-radius: 10px;
+                background-color: transparent;
+                .icon {
+                    background-color: #00000073;
+                    border: 1px solid #dfdfdf;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    svg {
+                        font-size: 100px;
+                        color: #dfdfdf;
+                    }
+                }
+            }
+        }
+        .artest-info {
+            .top-info {
+                @media (max-width: 470px) {
+                    text-align: center;
+                }
+                .artest-name {
+                    cursor: pointer;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .nav-video-lyr {
+        .container {
+            padding: 0;
+            @include md {
+                padding: 0 15px;
+            }
+            .song-nav {
+            display: flex;
+            gap: 20px;
+            padding: 15px;
+            text-transform: capitalize;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            cursor: pointer;
+            @include md {
+                padding:15px 0;
+            }
+            .vid , .lyr{
+                padding: 5px 10px;
+                border-radius: 5px;
+                &.active {
+                    @media (max-width: 767px){
+                        background-color: #eee;
+                        box-shadow: 0 0 15px 1px #eee;
+                    }
+                }
+
+            }
+            .vid {
+                    flex: 1;
+                    @include md {
+                        flex: 2;
+                    }
+            }
+                .lyr {
+                    flex: 1;
+                }
+            }
+            .music-video {
+                max-width: 100%;
+                overflow: hidden;
+                display: flex;
+                height: 420px;
+                gap: 20px;
+                margin-bottom: 30px;
+                .video {
+                    min-width: 100%;
+                    overflow: hidden;
+                    transition: all .4s;
+                    @include md {
+                        border-radius: 10px;
+                    }
+                    &.active {
+                        margin-left: -100%;
+                        @include md {
+                            margin-left: 0;
+                        }
+                    }
+                    @include md {
+                        flex-basis: 66.5%;
+                        min-width: 66.5%;
+                        margin-left: 0;
+                    }
+                    .video-container {
+                        height: 280px !important;
+                        @media (min-width: 450px) {
+                            height: 390px !important;
+                        }
+                        @include md {
+                            height: 420px !important;
+                        }
+                        div {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .lyr-container {
+                    width: 100%;
+                    height: 100%;
+                    transition: all .3s;
+                    .lyrics {
+                        overflow-x: auto;
+                        min-width: 100%;
+                        transition: all .4s;
+                        @include md {
+                            flex-basis: 33.5%;
+                            min-width:33.5%
+                        }
+                        ul {
+                            li {
+                                font-weight: 500;
+                                color: #444;
+                                &.space {
+                                    width: 100%;
+                                    margin: 20px 0;
+                                }
+                            }
+                        }
+                        footer {
+                            p {
+                                margin-top: 20px;
+                                font-size: 18px;
+                                color: #333;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    .not-found-lyr {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        h5 {
+                            text-transform: uppercase;
+                            color: #333;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

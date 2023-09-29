@@ -1,0 +1,64 @@
+@import "../../ClobalStyle/BreakPoints";
+
+.artest-albums {
+    position: relative;
+    .album-pa {
+       .about-alb {
+            padding-top: 100px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+          .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            @include sm {
+                flex-direction: row;
+            }
+            .img-box {
+                width: 100%;
+               overflow: hidden;
+               border-radius: 10px;
+               box-shadow: 1px 1px 16px 0px #00000038;
+               @include sm {
+                    width: 250px;
+                    height: 250px;
+              }
+            }
+            .alb-info {
+                width: 400px;
+                max-width: 100%;
+                @include sm {
+                 max-width: 50%;
+                }
+                .alb-n-ar-n {
+                    .alb-n {
+                        font-size: 20px;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                    }
+                    .art-n {
+                        font-size: 16px;
+                        font-weight: 500;
+                        text-transform: capitalize; 
+                        cursor: pointer;
+                    }
+                    .genres {
+                        padding: 10px 0;
+                        span {
+                            margin: 0 5px;
+                        }
+                    }
+                    .editorialNotes {
+                        font-size: 12px;
+                        span {
+                            cursor: pointer;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+          }
+       }
+    }
+}

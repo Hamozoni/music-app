@@ -1,0 +1,58 @@
+.more-notes {
+    z-index: 99999;
+    position: fixed;
+   .more-container {
+        background-color: #fff;
+        border-radius: 10px;
+        width: 700px;
+        max-width: 95%;
+        max-height: calc(100vh - 131px);
+    .note-header {
+       padding: 15px;
+       .close {
+        margin-bottom: -10px;
+        cursor: pointer;
+           svg {
+             font-size: 30px;
+             font-weight: 900;
+           }
+       }
+       .note-artist-info {
+        margin: 10px;
+        .title {
+            font-size: 22px;
+        }
+        .genr {
+            font-size: 14px;
+            font-weight: normal;
+        }
+       }
+    }
+    .note-body {
+        max-height: calc(100vh - 403px);
+        overflow-y: auto;
+        padding-left: 10px;
+        .container {
+            .content {
+                b {
+                    display: flex;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+    .note-footer {
+        padding: 10px;
+        text-transform: uppercase;
+        overflow: hidden;
+        .name {
+            font-size: 20px;
+        }
+        p:nth-of-type(2){
+            font-size: 12px;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+    }
+   }
+}

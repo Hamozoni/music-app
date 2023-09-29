@@ -1,0 +1,38 @@
+
+$break-points: (
+    "sm": 580px,
+    "md": 768px,
+    "lg" : 992px,
+    "xl": 1170px,
+    "xxl": 1400px,
+);
+
+@mixin sm {
+    @media (min-width: map-get($break-points, "sm")) {
+        @content;
+    };
+};
+
+@mixin md {
+    @media ( min-width: map-get($break-points, "md")) {
+        @content;
+    };
+};
+
+@mixin lg {
+    @media (min-width: map-get($break-points, "lg")) {
+        @content;
+    };
+};
+
+@mixin xl {
+    @media (min-width: map-get($break-points, "xl")) {
+        @content;
+    };
+};
+
+@mixin xxl {
+    @media (min-width: map-get($break-points, "xxl")) {
+        @content;
+    };
+};

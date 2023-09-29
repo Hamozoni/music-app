@@ -1,0 +1,132 @@
+
+nav.top-nav {
+    padding: 20px 0;
+    background: #262601d2;
+    color: #fff;
+    margin-bottom: 20px;
+    .container {
+        position: relative;
+    }
+    .nav-container {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        padding: 65px 0 0;
+        h5 {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .counries-opations {
+            position: relative;
+            width: 360px;
+            max-width: 100%;
+            .current-cou {
+                background-color: #898a5c;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+        .top-tracks {
+            margin-top: 20px;
+          .top-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .play-icon {
+                cursor: pointer;
+                min-width: 60px;
+                height: 60px;
+                background: #00000061;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #fff;
+                svg {
+                    font-size: 46px;
+                    color: #fff;
+                }
+            }
+            .top-ch-info {
+                .t-200 {
+                    text-transform: capitalize;
+                    font-size: 44px;
+                    font-weight: 700;
+                    letter-spacing: -3px;
+                }
+            }
+          } 
+        }
+        .cities-genres {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+            position: relative;
+            max-width: 360px;
+            .cities-name, .genres {
+                flex: 1;
+                padding: 10px 15px;
+                background: #898a5c;
+                border-radius: 5px;
+                cursor: pointer;
+                &.active {
+                    background-color: #182c01;
+                }
+            }
+            .cities-name , .genres{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                svg {
+                    font-size: 16px;
+                }
+            }
+            .genres {
+                position: relative;
+                .genres-list {
+                    position: absolute;
+                    right: 0;
+                    top: 55px;
+                    width: 190px;
+                    background-color: #fff;
+                    color: #000;
+                    padding: 15px 0 15px 15px;
+                    z-index: 9999;
+                    border-radius: 5px;
+                    display: none;
+                    box-shadow: 1px 1px 30px 0px #262601;
+                    &.active {
+                        display: block;
+                    }
+                    .gen {
+                        padding: 0;
+                        height: fit-content;
+                        max-height: 250px;
+                        overflow-y: auto;
+                    }
+                }
+            }
+        }
+    } 
+    .images-holder {
+        position: absolute;
+        left: 0;
+        top: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: -1;
+        .img-box {
+            width: calc(100% / 10);
+            height: 140px;
+        }
+    }
+}

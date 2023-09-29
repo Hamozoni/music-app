@@ -1,0 +1,59 @@
+
+.myh-country-menu{
+    position: absolute;
+    width: 250px;
+    color: #000;
+    right: 0;
+    top: 60px;
+    background-color: #fff;
+    z-index: 9999;
+    border-radius: 5px;
+    display: block;
+    box-shadow: 1px 1px 30px 0px #262601;
+    
+    &.ci {
+        right: unset;
+        left: 0;
+    }
+    .search-box {
+        width: 100%;
+        padding: 10px;
+        .search {
+            border-radius: 5px;
+            border: 1px solid #758013;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 10px;
+            .s-icon {
+                background: #fff;
+                color: #758013;
+            }
+        }
+    }
+}
+.myh-country-list {
+    padding: 15px;
+    height: fit-content;
+    max-height: 300px;
+    overflow-y: auto;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        color: #727c11;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all .4s;
+        svg {
+            font-size: 20px;
+        }
+        &:hover, &.active {
+            background-color: #fbffd9;
+            color: #182c01;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.albums {
+   .alm-container {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     width: 100%;
+     overflow-y: auto;
+     padding-top: 20px;
+     .albums-card {
+        cursor: pointer;
+       .alb-img {
+          width: 200px;
+          height: 200px;
+          border-radius: 10px;
+          overflow: hidden;
+          position: relative;
+          transition: all .5s;
+          img {
+            transition: all .5s;
+          }
+          &.latest {
+            height: 250px;
+          }
+        .al-s-cont {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: -60%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.712);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all .5s;
+        }
+       } 
+        &:hover img {
+          transform: scale(1.3) rotate(16deg);
+        }
+        &:hover .al-s-cont {
+          left: 0;
+        }
+        &:hover .alb-img {
+          transform: scale(1.1);
+          box-shadow: 0 0 15px 2px #b7acac8c;
+        }
+     }
+     .alb-info {
+          padding: 15px 0;
+          .title {
+            font-size: 16px;
+            color: darkslategray;
+            margin-bottom: 5px;
+          }
+          .rel-year {
+            font-size: 14px;
+            color: rgb(76, 122, 122);
+          }
+     }
+   }
+}

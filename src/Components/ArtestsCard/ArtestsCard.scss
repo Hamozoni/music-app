@@ -1,0 +1,37 @@
+.artests-card {
+    margin: 20px 0;
+    h4.art-t {
+        text-transform: capitalize;
+        font-size: 20px;
+        color: #3f4004;
+        margin-bottom: 10px;
+    }
+    .artests-info {
+        overflow-x: auto;
+        height: 280px;
+        .artest-container {
+            display: flex;
+            gap: 10px;
+            width: fit-content;
+            padding-top: 15px;
+            .artest-box {
+                cursor: pointer;
+                .artest-avatar {
+                    width: 150px;
+                    height: 200px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    transition: all .4s;
+                }
+                &:hover .artest-avatar {
+                    transform: scale(1.06);
+                    box-shadow: 0 0 15px 0px rgb(175 170 170 / 36%);
+                }
+                .artest-name{
+                    color: #555609;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}

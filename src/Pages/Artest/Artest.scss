@@ -1,0 +1,102 @@
+
+@import "../../ClobalStyle/BreakPoints";
+.artest {
+    position: relative;
+   .artest-page {
+         margin-bottom: 110px;
+         padding-top: 50px;
+
+        .container {
+            transform: translateY(61px);
+            @media (min-width: 470px) {
+                display: flex;
+                gap: 30px;
+
+            }
+            .artest-img-box {
+                width: 100%;
+                position: relative;
+                @media (min-width: 470px) {
+                    width: 250px;
+                    height: 250px;
+                }
+                img {
+                    border-radius: 10px;
+                }
+            }
+            .artest-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                gap: 20px;
+                .artest-name {
+                    font-size: 34px;
+                }
+                .view-share {
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    justify-content: space-evenly;
+                    padding-top: 15px;
+                    .view, .share {
+                        display: flex;
+                        align-items: center;
+                        border-radius: 5px;
+                        padding: 5px;
+                        text-transform: uppercase;
+                        .vie-t ,.shar-t{
+                            font-size: 16px;
+                            font-weight: 700;
+                            padding: 0 10px;
+                            display: none; 
+                            @media (max-width: 469px) {
+                                display: flex;
+                           }
+                            @include md {
+                                display: flex;
+                            
+                            }
+                        }
+                    }
+                    .view {
+                        background-color: #a0a053;
+                        color: #fff;
+                    .icon {
+                        background-color: rgb(255, 68, 68);
+                        border-radius: 50%;
+                        padding: 5px;
+                        font-size: 5px;
+                        border: 1px solid #fff;
+                        svg {
+                            font-size: 20px;
+                        }
+                    } 
+                    }
+                    .share {
+                        background-color: rgb(223, 223, 223);
+                        padding: 9px;
+                    }
+                }
+            }
+        }
+    }
+    .container {
+        .latest-song {
+            margin: 40px 0;
+            .chart-carts {
+                .chart-container {
+                    grid-template-columns: repeat(auto-fill, 200px);
+                    .chart-box {
+                        flex-direction: column;
+                        .chart-image {
+                            width: 200px;
+                            min-width: 200px !important;
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
