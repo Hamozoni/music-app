@@ -4,21 +4,19 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import './Header.scss'
 import { useNavigate } from 'react-router-dom';
 import SearchField from '../SearchField/SearchField';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const Header = ()=> {
 
     const navigate = useNavigate();
-    const [searchInput,setSearchInput] = useState("")
+    const [searchInputValue,setSearchInputValue] = useState("")
     const [showSearchInput,setShowSearchInput] = useState(false);
 
-    document.getElementById("root").addEventListener("click",(e)=>{
-        if(e.target.classList.contains("search")){
-            setShowSearchInput(true);
-        } else {
-            setShowSearchInput(false);
-        }
-    })
+    const searchInput = useRef()
+
+    const searchHandler = ()=>{
+        searchInput.current.focus();
+    };
 
     return (
         <header id="header">
@@ -28,16 +26,23 @@ const Header = ()=> {
                     <h1 onClick={()=> navigate("/")}>MYH</h1>
                 </div>
                 <div className="search-box">
-                    <button ><SearchRoundedIcon className='search' /></button>
+                    <button onClick={searchHandler} ><SearchRoundedIcon className='search' /></button>
                     <input
+                       ref={searchInput}
                         className='search'
                         type="text"
                         placeholder="search..."
-                        onBlur={(e)=>{ setSearchInput(e.target.value) }} 
+                        onFocus={()=> setShowSearchInput(true)}
+                        onBlur={()=> {
+                            setTimeout(()=>{
+                                setShowSearchInput(false)
+                            },400)
+                        }}
+                        onChange={(e)=> setSearchInputValue(e.target.value)}
                     />
                     {
                         showSearchInput ? 
-                        <SearchField searchInput={searchInput}/> : ""
+                        <SearchField setShowSearchInput={setShowSearchInput} searchInput={searchInputValue}/> : ""
                     }
                     
                 </div>

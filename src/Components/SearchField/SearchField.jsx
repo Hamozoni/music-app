@@ -7,7 +7,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import image1 from "../../Images/no-results.png";
 import Error from "../Error/Error";
 
-const SearchField = ({ searchInput })=> {
+const SearchField = ({ setShowSearchInput, searchInput })=> {
 
     const  navigate  = useNavigate();
 
@@ -34,7 +34,13 @@ const SearchField = ({ searchInput })=> {
                 setError(error);
             });
         }
-     },[searchInput])
+     },[searchInput]);
+
+     const handleNavigating = (href)=> { 
+        navigate(href)
+        setShowSearchInput(false);
+     };
+
     return (
         isError ? <Error error={error} /> :
         <div className="search-field">
@@ -50,7 +56,7 @@ const SearchField = ({ searchInput })=> {
                             <div
                                 key={i}
                                 className="track-card"
-                                onClick={()=> navigate(`/song/${tr?.track?.key}`)}>
+                                onClick={()=> handleNavigating(`/song/${tr?.track?.key}`)}>
                                 <div className="img">
                                     <img src={tr?.track?.images?.coverart} alt={tr?.track?.title} />
                                 </div>
@@ -86,7 +92,7 @@ const SearchField = ({ searchInput })=> {
                             <div
                                 key={i}
                                 className="artist-card"
-                                onClick={()=> navigate(`/artest/${art?.artist?.adamid}`)}>
+                                onClick={()=> handleNavigating(`/artest/${art?.artist?.adamid}`)}>
                                 <div className="img">
                                     <img src={art?.artist?.avatar} alt={art?.artist?.name} />
                                 </div>

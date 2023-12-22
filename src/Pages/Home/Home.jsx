@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
 import { shazamData5 } from "../../FetchData/Fetch";
-// import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
 import "./Home.scss";
 import Loading from "../../Components/Loading/Loading";
 import HomeSlider from "../../Components/HomeSlider/HomeSlider";
@@ -54,7 +53,7 @@ const Home = ()=> {
                 setError(error);
             });
 
-    },[state.listId]);
+    },[state?.listId]);
 
     return (
          isError ? <Error error={error} /> :

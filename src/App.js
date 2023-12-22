@@ -68,8 +68,6 @@ window.addEventListener("scroll",()=>{
             <AudioPlayer /> : ''
           }
       </BrowserRouter>
-       {/* <RouterProvider router={router} /> */}
-
     </globalSates.Provider>
   );
 }
