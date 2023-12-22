@@ -29,7 +29,9 @@ const Chart = ({ title, data , pFrom })=> {
                         <div className="counter">
                             {i + 1}
                         </div>
-                        <div className="chart-image"  onClick={()=> setCurrentSong(setState,state,data,i,pFrom)} >
+                        <div className="chart-image"  
+                            onClick={()=> setCurrentSong(setState,state,data,i,pFrom)} 
+                            >
                             <img src={chart?.artestImg ? chart?.artestImg : img1} alt={chart?.songTitle} />
                             <div
                                 className={state.playingFrom === pFrom &&

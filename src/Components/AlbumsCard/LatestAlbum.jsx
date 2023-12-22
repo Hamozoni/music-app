@@ -14,7 +14,10 @@ const LatestAlbum = ({data, data2, artistId})=> {
         <div className="alm-container">
         {
            data?.map((alb,i)=>(
-                <div key={i} className="albums-card" onClick={()=> navgate(`/artest/${artistId}/albums/${alb?.id}`,{ state : data2})}>
+                <div key={i} 
+                     className="albums-card" 
+                     onClick={()=> navgate(`/artest/${artistId}/albums/${alb?.id}`,{ state : data2})}
+                     >
                     <div className="alb-img latest">
                        <img src={alb?.attributes  ? alb?.attributes?.artwork?.url?.replace("{w}x{h}","200x200") : img1} alt={alb?.attributes ?alb?.attributes?.name : ""} />
                        <div className="al-s-cont"

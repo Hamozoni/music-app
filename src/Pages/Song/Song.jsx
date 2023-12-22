@@ -13,7 +13,6 @@ import Loading from "../../Components/Loading/Loading";
 import ReactPlayer from "react-player";
 import TopSongsByAtrest from "../../Components/TopSongsByArtest/TopSongsByArtest";
 import { globalSates } from "../../App";
-import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
 import { setCurrentSong } from "../../App";
 import Error from "../../Components/Error/Error";
 
@@ -208,10 +207,6 @@ const Song = ()=> {
                 {
                     isLoading ? <Loading /> :
                     <TopSongsByAtrest id={ songData.length ? songData[0]?.artists : songData2[0]?.artists }/>
-                }
-                {
-                  state?.isSongPlaying ?
-                    <AudioPlayer /> : ''
                 }
             </div>
         </div>    

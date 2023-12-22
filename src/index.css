@@ -79,3 +79,6 @@ input, button {
   align-items: center;
   justify-content: center;
 }
+#root {
+  position: relative;
+}

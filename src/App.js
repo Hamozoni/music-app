@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Artest from './Pages/Artest/Artest'
 import Song from './Pages/Song/Song';
@@ -7,45 +7,8 @@ import Header from './Components/Header/Header';
 import { createContext,  useState } from 'react';
 import ArtestAlbums from './Pages/ArtestAlbums/ArtestAlbums';
 import Chart from './Pages/Chart/Chart';
+import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
 
-const Layout = ()=> {
-  return (
-    <>
-      <Header />
-        <Outlet />
-      <Footer />
-    </>
-  )
-};
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children : [
-      {
-        path: '/',
-        element: <Home />
-      },
-      {
-        path: '/artest/:id',
-        element: <Artest />
-      },
-      {
-        path: '/artest/:artistId/albums/:id',
-        element: <ArtestAlbums />
-      },
-      {
-        path: '/song/:id',
-        element: <Song />
-      },
-      {
-        path: '/chart/:country/:city/:genres/:id',
-        element: <Chart />
-      },
-    ]
-  }
-]);
 
 export const globalSates = createContext();
 
@@ -67,7 +30,7 @@ export const setCurrentSong = (setState,state,data,i,from)=> {
   }
 };
 
-function App() {
+const App = ()=> {
 
 window.addEventListener("scroll",()=>{
     if(window?.scrollY < 20 ) {
@@ -89,7 +52,24 @@ window.addEventListener("scroll",()=>{
 
   return (
     <globalSates.Provider value={[state,setState]}>
-       <RouterProvider router={router} />
+
+      <BrowserRouter>
+        <Header />
+        <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/artest/:id' element={<Artest />}/>
+            <Route path='/artest/:artistId/albums/:id' element={<ArtestAlbums />}/>
+            <Route path='/song/:id' element={<Song />}/>
+            <Route path='/chart/:country/:city/:genres/:id' element={<Chart />}/>
+        </Routes>
+          <Footer />
+          { 
+            state?.isSongPlaying ?
+            <AudioPlayer /> : ''
+          }
+      </BrowserRouter>
+       {/* <RouterProvider router={router} /> */}
+
     </globalSates.Provider>
   );
 }

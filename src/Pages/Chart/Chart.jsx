@@ -2,17 +2,14 @@ import TopNav from "../../Components/TopNav/TopNav";
 import "./Chart.scss";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
 import { useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Loading from "../../Components/Loading/Loading";
 import {shazamData4 }from "../../FetchData/Fetch";
-import { globalSates } from "../../App";
-import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
 import Error from "../../Components/Error/Error";
 
 const Chart = ()=> {
 
     const {country, id } = useParams();
-    const [state] = useContext(globalSates);
 
     const [chartsData,setChartsData] = useState([]);
     const [isLoading,setIsloading] = useState(false);
@@ -62,9 +59,6 @@ const Chart = ()=> {
                     </div>
                 )
                 
-            }
-            { state?.isSongPlaying ?
-              <AudioPlayer /> : ''
             }
         </div>
     );

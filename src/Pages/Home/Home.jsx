@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
 import { shazamData5 } from "../../FetchData/Fetch";
-import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
+// import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
 import "./Home.scss";
 import Loading from "../../Components/Loading/Loading";
 import HomeSlider from "../../Components/HomeSlider/HomeSlider";
 
-import video1 from "../../videos/QOOY0265.MP4";
+import video1 from "../../videos/particles.mp4";
 import ArtestsCard from "../../Components/ArtestsCard/ArtestsCard";
 
 import { globalSates } from "../../App"
@@ -62,7 +62,8 @@ const Home = ()=> {
             {isLoading ? <Loading /> :
             <>
                 <HomeSlider data={chartsData} />
-                <div className="video-player" onClick={()=> navigate(`chart/global/all/pop/genre-global-chart-1`)}>
+                <div className="video-player" 
+                    onClick={()=> navigate(`chart/global/all/pop/genre-global-chart-1`)}>
                     <div className="container">
                         <video muted autoPlay  >
                             <source src={video1} />
@@ -79,9 +80,6 @@ const Home = ()=> {
                 </div>
             </>
             }
-            
-            {state?.isSongPlaying ?
-                <AudioPlayer /> : ''}
             </div>
     )
 };

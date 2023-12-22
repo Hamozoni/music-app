@@ -1,10 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { shazamData3 } from "../../FetchData/Fetch"
 import Loading from "../../Components/Loading/Loading";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
-import { globalSates } from "../../App";
-import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
 
 import "./ArtestAlbums.scss";
 import EditorP from "./EditorP/EditorP";
@@ -16,8 +14,6 @@ const ArtestAlbums = ()=> {
 
     const location = useLocation();
     const navigate = useNavigate();
-
-    const [state] = useContext(globalSates)
 
     const { id, artistId }= useParams();
     const [isLoading,setIsloading] = useState(true);
@@ -105,8 +101,6 @@ const ArtestAlbums = ()=> {
                 </div>
                 </>
             }
-           {state?.isSongPlaying ?
-            <AudioPlayer /> : ''}
         </div>
     );
 };

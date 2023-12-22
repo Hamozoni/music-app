@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { shazamData } from "../../FetchData/Fetch";
 import { shazamData1 } from "../../FetchData/Fetch";
 import { shazamData2 } from "../../FetchData/Fetch";
@@ -7,8 +7,6 @@ import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import "./Artest.scss";
 import img1 from "../../Images/audio-2.jpg";
 import { useParams } from "react-router-dom";
-import AudioPlayer from "../../Components/AudioPlayer/AudioPlayer";
-import { globalSates } from "../../App";
 import Loading from "../../Components/Loading/Loading";
 import AlbumsCard from "../../Components/AlbumsCard/AlbumsCard";
 import LatestAlbum from "../../Components/AlbumsCard/LatestAlbum";
@@ -18,7 +16,6 @@ import Error from "../../Components/Error/Error";
 const Artest = () => {
 
   const { id } = useParams();
-  const [state] = useContext(globalSates);
 
   const [artestDetails, setArtestDetails] = useState({});
   const [latestSongs, setLatestSongs] = useState([]);
@@ -120,8 +117,6 @@ const Artest = () => {
           </div>
           <AlbumsCard data={artestDetails?.albums} artistId={id} />
         </div>
-           {state?.isSongPlaying ?
-            <AudioPlayer /> : ''}
         </>}
     </div>
   );
