@@ -2,11 +2,11 @@ import "./HomeSlider.scss";
 import image1 from "../../Images/audio-2.jpg";
 
 const HomeSlider = ({ data })=> {
-   
+
     return (
         <div className="home-slider">
            <div className="container">
-             <div className="silder-info flex-box">
+             <div className="silder-info overlay flex-box">
                 <h4 className="slid-t">
                     global top 200
                 </h4>

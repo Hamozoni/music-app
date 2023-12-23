@@ -5,12 +5,11 @@ import "./Home.scss";
 import Loading from "../../Components/Loading/Loading";
 import HomeSlider from "../../Components/HomeSlider/HomeSlider";
 
-import video1 from "../../videos/particles.mp4";
+import video1 from "../../videos/dj-1258.mp4";
 import ArtestsCard from "../../Components/ArtestsCard/ArtestsCard";
 
 import { globalSates } from "../../App"
 import { useNavigate } from "react-router-dom";
-import TopNav from "../../Components/TopNav/TopNav";
 import Error from "../../Components/Error/Error";
 
 const Home = ()=> {
@@ -33,17 +32,18 @@ const Home = ()=> {
             .then((data)=> {
                     const trackData = data.data.tracks
                     for(let i = 0; i <  trackData.length; i++){
-    
                         setChartsData((prev)=>{
-                            return [...prev,
-                            {
-                                artestImg: trackData[i]?.images?.background,
-                                artestName: trackData[i]?.subtitle,
-                                songTitle: trackData[i]?.title,
-                                audioSrc  : trackData[i]?.hub?.actions ? trackData[i]?.hub?.actions[1]?.uri : "unknown",
-                                artists: trackData[i]?.artists ? trackData[i]?.artists[0]?.adamid : "unknown",
-                                songKey: trackData[i]?.key
-                            }]
+                            return [
+                                ...prev,
+                                {
+                                    artestImg: trackData[i]?.images?.background,
+                                    artestName: trackData[i]?.subtitle,
+                                    songTitle: trackData[i]?.title,
+                                    audioSrc  : trackData[i]?.hub?.actions ? trackData[i]?.hub?.actions[1]?.uri : "unknown",
+                                    artists: trackData[i]?.artists ? trackData[i]?.artists[0]?.adamid : "unknown",
+                                    songKey: trackData[i]?.key
+                                }
+                            ]
                         })
                 }
                 setIsloading(false)
@@ -69,13 +69,12 @@ const Home = ()=> {
                         <video ref={chartVideo} muted autoPlay  onEnded={()=> chartVideo.current.play()} >
                             <source src={video1} />
                         </video>
-                        <div className="view-chart">
+                        <div className="view-chart overlay">
                             view chart
                         </div>
                     </div>
                 </div>
                 <div className="container">
-                    <TopNav data={chartsData} />
                     <ArtestsCard data={chartsData}/>
                     <ChartCarts title={title} data={chartsData} pFrom={"chart"}/>
                 </div>

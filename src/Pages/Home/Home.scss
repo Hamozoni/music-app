@@ -17,40 +17,11 @@
          max-width: 100%;
       }
       .view-chart {
-         position: absolute;
-         left: 0;
-         top: 0;
-         width: 100%;
-         height: 100%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         background-color: rgba(0, 0, 0, 0.788);
          color: #fff;
          text-transform: uppercase;
          font-size: 18px;
          font-weight: 600;
          cursor: pointer;
-      }
-   }
-   .container {
-      max-width: 1280px;
-      .top-nav {
-         border-radius: 5px;
-         background-color: #080606b8;
-         .nav-container {
-            gap: 0;
-            padding: 0;
-            .top-tracks {
-               display: none;
-            }
-         }
-         .images-holder {
-            top: -18px;
-            .img-box {
-               height: 70px;
-            }
-         }
       }
    }
 } 
