@@ -8,14 +8,14 @@ import HomeSlider from "../../Components/HomeSlider/HomeSlider";
 import video1 from "../../videos/dj-1258.mp4";
 import ArtestsCard from "../../Components/ArtestsCard/ArtestsCard";
 
-import { globalSates } from "../../App"
 import { useNavigate } from "react-router-dom";
 import Error from "../../Components/Error/Error";
+import { globalSates } from "../../Utils/Context";
 
 const Home = ()=> {
     const navigate = useNavigate()
 
-    const [state] = useContext(globalSates);
+    const {state} = useContext(globalSates);
 
     const title = "Global Top 20 Chart";
 

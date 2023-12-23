@@ -4,16 +4,15 @@ import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import img1 from "../../Images/audio-2.jpg"
 
 import { useContext} from "react";
-import { globalSates } from "../../App";
 import { useNavigate } from "react-router-dom";
 
-import { setCurrentSong } from "../../App";
+import { globalSates } from "../../Utils/Context";
 
 
 const Chart = ({ title, data , pFrom })=> {
 
     const navigate = useNavigate();
-    const [state,setState] = useContext(globalSates);
+    const {state, setState, setCurrentSong} = useContext(globalSates);
 
     return (
         <section className="chart-carts">

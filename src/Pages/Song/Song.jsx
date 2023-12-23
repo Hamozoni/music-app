@@ -12,16 +12,15 @@ import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import Loading from "../../Components/Loading/Loading";
 import ReactPlayer from "react-player";
 import TopSongsByAtrest from "../../Components/TopSongsByArtest/TopSongsByArtest";
-import { globalSates } from "../../App";
-import { setCurrentSong } from "../../App";
 import Error from "../../Components/Error/Error";
+import { globalSates } from "../../Utils/Context";
 
 
 const Song = ()=> {
 
     const navigate = useNavigate();
 
-    const [state,setState] = useContext(globalSates);
+    const { state, setState, setCurrentSong } = useContext(globalSates);
     const { id } = useParams();
     
     const [isLoading,setIsloading] = useState(true);

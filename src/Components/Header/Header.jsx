@@ -4,7 +4,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import './Header.scss'
 import { useNavigate } from 'react-router-dom';
 import SearchField from '../SearchField/SearchField';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Header = ()=> {
 
@@ -12,14 +12,31 @@ const Header = ()=> {
     const [searchInputValue,setSearchInputValue] = useState("")
     const [showSearchInput,setShowSearchInput] = useState(false);
 
-    const searchInput = useRef()
+    const searchInput = useRef();
+    const header = useRef();
 
     const searchHandler = ()=>{
         searchInput.current.focus();
     };
 
+    useEffect(()=>{
+
+        const handleScroll = ()=> {
+            if(window?.scrollY < 20 ) {
+                header.current.classList.add("trans");
+             }else{
+                header.current.classList.remove("trans");
+             }
+        };
+
+        window.addEventListener("scroll",handleScroll);
+        return ()=> window.removeEventListener("scroll",handleScroll);
+
+    },[]);
+
+
     return (
-        <header id="header">
+        <header id="header" ref={header}>
             <div className="container">
                 <div className="logo">
                     <span> <MusicNoteRoundedIcon /></span>  

@@ -12,14 +12,14 @@ import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded';
 import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowDownRounded';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { globalSates } from '../../App';
 import { useNavigate } from 'react-router-dom';
+import { globalSates } from '../../Utils/Context';
 
 const AudioPlayer = () => {
     const navigate = useNavigate();
 
 
-    const [state,setState] = useContext(globalSates);
+    const { state, setState } = useContext(globalSates);
 
     const audioSource = useRef();
     const durationValue = useRef();
