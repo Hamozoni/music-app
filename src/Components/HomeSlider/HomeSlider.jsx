@@ -2,7 +2,6 @@ import "./HomeSlider.scss";
 import image1 from "../../Images/audio-2.jpg";
 
 const HomeSlider = ({ data })=> {
-
    
     return (
         <div className="home-slider">

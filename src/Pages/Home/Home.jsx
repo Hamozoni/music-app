@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
 import { shazamData5 } from "../../FetchData/Fetch";
 import "./Home.scss";
@@ -55,6 +55,8 @@ const Home = ()=> {
 
     },[state?.listId]);
 
+    const chartVideo = useRef()
+
     return (
          isError ? <Error error={error} /> :
             <div className="home">
@@ -64,7 +66,7 @@ const Home = ()=> {
                 <div className="video-player" 
                     onClick={()=> navigate(`chart/global/all/pop/genre-global-chart-1`)}>
                     <div className="container">
-                        <video muted autoPlay  >
+                        <video ref={chartVideo} muted autoPlay  onEnded={()=> chartVideo.current.play()} >
                             <source src={video1} />
                         </video>
                         <div className="view-chart">

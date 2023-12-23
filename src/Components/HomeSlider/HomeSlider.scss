@@ -42,86 +42,16 @@
             gap:5px;
             .img-container {
                 border-radius: 10px;
-                width: 100px;
-                height: 100px;
-                animation: moveImages 20s 25s;
+                width: 170px;
+                height: 170px;
+                border-radius: 20px;
+                overflow: hidden;
                 &.active {
                     transform: rotate(45deg);
+                    border: 5px solid #fff;
                     transition: all .4s;
-                }
-                img {
-                    border-radius: 5px;
-                    animation: moveImages 20s 5s;
                 }
             }
         }
-    }
-}
-
-@keyframes moveImages {
-    0% {
-        transform: rotate(45deg) translateX(50px);
-    }
-    5% {
-        transform: rotate(50deg) translateX(100px);
-    }
-    10% {
-        transform:rotate(55deg) translateX(150px);
-    }
-    15% {
-        transform:rotate(55deg) translateX(200px);
-    }
-    20% {
-        transform:rotate(65deg) translateX(250px);
-    }
-    25% {
-        transform:rotate(70deg) translateX(300px);
-    }
-    30% {
-        transform:rotate(75deg) translateX(350px);
-    }
-    35% {
-        transform:rotate(80deg) translateX(400px);
-    }
-    40% {
-        transform:rotate(85deg) translateX(450px);
-    }
-    45% {
-        transform:rotate(90deg) translateX(500px);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-        transform:rotate(90deg) translateX(-500px);
-    }
-    55% {
-        transform:rotate(85deg) translateX(-450px);
-    }
-    60% {
-        transform:rotate(80deg) translateX(-400px);
-    }
-    65% {
-        transform:rotate(75deg) translateX(-350px);
-    }
-    70% {
-        transform:rotate(70deg) translateX(-300px);
-    }
-    75% {
-        transform:rotate(65deg) translateX(-250px);
-    }
-    80% {
-        transform:rotate(60deg) translateX(-200px);
-    }
-    85% {
-        transform:rotate(55deg) translateX(-150px);
-    }
-    90% {
-        transform:rotate(45deg) translateX(-100px);
-    }
-    95% {
-        transform:rotate(20deg) translateX(-50px);
-    }
-    100% {
-        transform:rotate(0deg) translateX(0px);
     }
 }

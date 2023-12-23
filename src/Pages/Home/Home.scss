@@ -2,6 +2,8 @@
 
 .home {
    .video-player {
+      background-color: #000;
+      min-width: 100vw;
       .container {
          padding: 0;
       }
@@ -9,7 +11,7 @@
       width: fit-content;
       max-width: 100%;
       overflow: hidden;
-      margin: 20px auto;
+      margin: 0 auto;
       video {
          width:  100%;
          max-width: 100%;
@@ -32,6 +34,7 @@
       }
    }
    .container {
+      max-width: 1280px;
       .top-nav {
          border-radius: 5px;
          background-color: #080606b8;
