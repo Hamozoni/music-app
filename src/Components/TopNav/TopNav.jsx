@@ -6,7 +6,7 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { useContext, useEffect, useState } from "react";
-import { shazamData3 } from "../../FetchData/Fetch";
+import { shazamData3 } from "../../Utils/Fetch";
 import CountryForm from "./CountriesForm/CountryForm";
 import { useNavigate, useParams } from "react-router-dom";
 import image from "../../Images/audio-2.jpg"

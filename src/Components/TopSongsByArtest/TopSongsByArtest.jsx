@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { shazamData4 } from "../../FetchData/Fetch";
+import { shazamData4 } from "../../Utils/Fetch";
 import Loading from "../Loading/Loading";
 import ChartCarts from "../ChartCarts/ChartCarts";
 import Error from "../Error/Error";

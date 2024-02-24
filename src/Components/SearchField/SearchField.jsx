@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SearchField.scss";
-import { shazamData2 } from "../../FetchData/Fetch";
+import { shazamData2 } from "../../Utils/Fetch";
 import Loading from "../Loading/Loading"
 import { useNavigate } from "react-router-dom";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';

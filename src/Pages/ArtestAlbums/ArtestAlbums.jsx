@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { shazamData3 } from "../../FetchData/Fetch"
+import { shazamData3 } from "../../Utils/Fetch"
 import Loading from "../../Components/Loading/Loading";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
 

@@ -4,7 +4,7 @@ import ChartCarts from "../../Components/ChartCarts/ChartCarts";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "../../Components/Loading/Loading";
-import {shazamData4 }from "../../FetchData/Fetch";
+import {shazamData4 }from "../../Utils/Fetch";
 import Error from "../../Components/Error/Error";
 
 const Chart = ()=> {

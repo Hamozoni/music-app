@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
-import { shazamData5 } from "../../FetchData/Fetch";
+import { shazamData5 } from "../../Utils/Fetch";
 import "./Home.scss";
 import Loading from "../../Components/Loading/Loading";
 import HomeSlider from "../../Components/HomeSlider/HomeSlider";

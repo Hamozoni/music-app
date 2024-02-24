@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { shazamData } from "../../FetchData/Fetch";
-import { shazamData1 } from "../../FetchData/Fetch";
-import { shazamData2 } from "../../FetchData/Fetch";
+import { shazamData,shazamData1,shazamData2} from "../../Utils/Fetch";
 import AudiotrackRoundedIcon from "@mui/icons-material/AudiotrackRounded";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import "./Artest.scss";

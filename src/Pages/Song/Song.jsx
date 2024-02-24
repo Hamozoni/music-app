@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { shazamData } from "../../FetchData/Fetch";
-import { shazamData1 } from "../../FetchData/Fetch";
+import { shazamData ,shazamData1} from "../../Utils/Fetch";
 import "../Artest/Artest.scss";
 import "./Song.scss";
 import img1 from "../../Images/audio-2.jpg";
