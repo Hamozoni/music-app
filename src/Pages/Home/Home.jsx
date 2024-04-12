@@ -21,45 +21,29 @@ const Home = ()=> {
 
     const [chartsData,setChartsData] = useState([]);
     const [isLoading,setIsloading] = useState(false);
-    const [isError,setIsError] = useState(false);
-    const [error,setError] = useState("");
+    const [error,setError] = useState(null);
      
     useEffect(()=> {
             setIsloading(true);
-            setIsError(false);
-            setChartsData([]);
             shazamData5(`charts/track?listId=${state?.listId}`)
             .then((data)=> {
-                console.log(data)
-                    const trackData = data.data.tracks
-                    for(let i = 0; i <  trackData.length; i++){
-                        setChartsData((prev)=>{
-                            return [
-                                ...prev,
-                                {
-                                    artestImg: trackData[i]?.images?.background,
-                                    artestName: trackData[i]?.subtitle,
-                                    songTitle: trackData[i]?.title,
-                                    audioSrc  : trackData[i]?.hub?.actions ? trackData[i]?.hub?.actions[1]?.uri : "unknown",
-                                    artists: trackData[i]?.artists ? trackData[i]?.artists[0]?.adamid : "unknown",
-                                    songKey: trackData[i]?.key
-                                }
-                            ]
-                        })
-                }
-                setIsloading(false)
+                console.log(data?.data?.tracks);
+                setChartsData(data.data.tracks)
+                
             })
             .catch((error)=>{
-                setIsError(true);
                 setError(error);
-            });
+            })
+            .finally(()=> {
+                setIsloading(false)
+            })
 
     },[state?.listId]);
 
     const chartVideo = useRef()
 
     return (
-         isError ? <Error error={error} /> :
+         error ? <Error error={error} /> :
             <div className="home">
             {isLoading ? <Loading /> :
             <>
