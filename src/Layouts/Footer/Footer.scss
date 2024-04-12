@@ -1,0 +1,39 @@
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+footer.footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    background-image: radial-gradient(white, #c9c9c9);
+   .container {
+        @extend %flex;
+        flex-direction: column;
+        @media (min-width: 510px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    .footer-logo {
+        @extend %flex;
+        h1 {
+            font-size: 17px;
+            color: #000;
+            cursor: pointer;
+            text-shadow: 0px 0px 3px #000;
+        }
+        span {
+            background-color:  #00000061 ;
+            border-radius: 10px;
+            box-shadow: 0 0 5px -2px #fff;
+            svg {
+                font-size: 28px;
+            }
+        }
+    }
+    .copy-right {
+        text-align: center;
+    }
+  }
+}

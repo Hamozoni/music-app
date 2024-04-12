@@ -30,6 +30,7 @@ const Home = ()=> {
             setChartsData([]);
             shazamData5(`charts/track?listId=${state?.listId}`)
             .then((data)=> {
+                console.log(data)
                     const trackData = data.data.tracks
                     for(let i = 0; i <  trackData.length; i++){
                         setChartsData((prev)=>{

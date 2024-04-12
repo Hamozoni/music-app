@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Artest from './Pages/Artest/Artest'
 import Song from './Pages/Song/Song';
-import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
+import Footer from './Layouts/Footer/Footer';
+import Header from './Layouts/Header/Header';
 import { useContext} from 'react';
 import ArtestAlbums from './Pages/ArtestAlbums/ArtestAlbums';
 import Chart from './Pages/Chart/Chart';
-import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
+import AudioPlayer from './Layouts/AudioPlayer/AudioPlayer';
 import { globalSates } from './Context/Context';
 
 
