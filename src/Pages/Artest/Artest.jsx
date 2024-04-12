@@ -3,7 +3,7 @@ import { shazamData,shazamData1,shazamData2} from "../../Utils/Fetch";
 import AudiotrackRoundedIcon from "@mui/icons-material/AudiotrackRounded";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import "./Artest.scss";
-import img1 from "../../Images/audio-2.jpg";
+import img1 from "../../Assets/audio-2.jpg";
 import { useParams } from "react-router-dom";
 import Loading from "../../Components/Loading/Loading";
 import AlbumsCard from "../../Components/AlbumsCard/AlbumsCard";

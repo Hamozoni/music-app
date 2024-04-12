@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { shazamData ,shazamData1} from "../../Utils/Fetch";
 import "../Artest/Artest.scss";
 import "./Song.scss";
-import img1 from "../../Images/audio-2.jpg";
+import img1 from "../../Assets/audio-2.jpg";
 import AudiotrackRoundedIcon from "@mui/icons-material/AudiotrackRounded";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
@@ -12,7 +12,7 @@ import Loading from "../../Components/Loading/Loading";
 import ReactPlayer from "react-player";
 import TopSongsByAtrest from "../../Components/TopSongsByArtest/TopSongsByArtest";
 import Error from "../../Components/Error/Error";
-import { globalSates } from "../../Utils/Context";
+import { globalSates } from "../../Context/Context";
 
 
 const Song = ()=> {

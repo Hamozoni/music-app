@@ -1,12 +1,12 @@
 import "./ChartCarts.scss";
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
-import img1 from "../../Images/audio-2.jpg"
+import img1 from "../../Assets/audio-2.jpg"
 
 import { useContext} from "react";
 import { useNavigate } from "react-router-dom";
 
-import { globalSates } from "../../Utils/Context";
+import { globalSates } from "../../Context/Context";
 
 
 const Chart = ({ title, data , pFrom })=> {

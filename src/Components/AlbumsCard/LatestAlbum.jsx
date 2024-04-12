@@ -1,5 +1,5 @@
 import "./AlbumsCard.scss";
-import img1 from "../../Images/audio-2.jpg";
+import img1 from "../../Assets/audio-2.jpg";
 import { useNavigate } from "react-router-dom";
 
 const LatestAlbum = ({data, data2, artistId})=> {

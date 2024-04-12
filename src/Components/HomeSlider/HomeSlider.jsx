@@ -1,5 +1,5 @@
 import "./HomeSlider.scss";
-import image1 from "../../Images/audio-2.jpg";
+import image1 from "../../Assets/audio-2.jpg";
 
 const HomeSlider = ({ data })=> {
 

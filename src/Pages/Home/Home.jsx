@@ -5,12 +5,12 @@ import "./Home.scss";
 import Loading from "../../Components/Loading/Loading";
 import HomeSlider from "../../Components/HomeSlider/HomeSlider";
 
-import video1 from "../../videos/dj-1258.mp4";
+import video1 from "../../Assets/dj-1258.mp4";
 import ArtestsCard from "../../Components/ArtestsCard/ArtestsCard";
 
 import { useNavigate } from "react-router-dom";
 import Error from "../../Components/Error/Error";
-import { globalSates } from "../../Utils/Context";
+import { globalSates } from "../../Context/Context";
 
 const Home = ()=> {
     const navigate = useNavigate()

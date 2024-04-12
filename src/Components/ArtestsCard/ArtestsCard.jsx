@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import img1 from "../../Images/audio-2.jpg";
+import img1 from "../../Assets/audio-2.jpg";
 import "./ArtestsCard.scss";
 
 const ArtestsCard = ({ data })=> {

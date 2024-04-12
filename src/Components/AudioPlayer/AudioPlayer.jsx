@@ -13,7 +13,7 @@ import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDouble
 import KeyboardDoubleArrowDownRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowDownRounded';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { globalSates } from '../../Utils/Context';
+import { globalSates } from '../../Context/Context';
 
 const AudioPlayer = () => {
     const navigate = useNavigate();

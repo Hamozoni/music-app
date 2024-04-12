@@ -9,9 +9,9 @@ import { useContext, useEffect, useState } from "react";
 import { shazamData3 } from "../../Utils/Fetch";
 import CountryForm from "./CountriesForm/CountryForm";
 import { useNavigate, useParams } from "react-router-dom";
-import image from "../../Images/audio-2.jpg"
+import image from "../../Assets/audio-2.jpg"
 import Error from "../Error/Error";
-import { globalSates } from "../../Utils/Context";
+import { globalSates } from "../../Context/Context";
 
 const TopNav = ({ data })=> {
 

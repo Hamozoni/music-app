@@ -8,7 +8,7 @@ import { useContext} from 'react';
 import ArtestAlbums from './Pages/ArtestAlbums/ArtestAlbums';
 import Chart from './Pages/Chart/Chart';
 import AudioPlayer from './Components/AudioPlayer/AudioPlayer';
-import { globalSates } from './Utils/Context';
+import { globalSates } from './Context/Context';
 
 
 const App = ()=> {

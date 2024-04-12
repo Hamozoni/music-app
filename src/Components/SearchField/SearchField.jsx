@@ -4,7 +4,7 @@ import { shazamData2 } from "../../Utils/Fetch";
 import Loading from "../Loading/Loading"
 import { useNavigate } from "react-router-dom";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import image1 from "../../Images/no-results.png";
+import image1 from "../../Assets/no-results.png";
 import Error from "../Error/Error";
 
 const SearchField = ({ setShowSearchInput, searchInput })=> {
