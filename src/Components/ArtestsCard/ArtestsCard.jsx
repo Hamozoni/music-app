@@ -22,11 +22,11 @@ const ArtestsCard = ({ data })=> {
                                 onClick={()=> navigate(`/artest/${artest?.artists}`)}
                                 >
                                 <div className="artest-avatar">
-                                    <img src={artest?.artestImg? artest?.artestImg : img1} alt={artest?.songTitle} />
+                                    <img src={artest?.images?.background  ? artest?.images?.background : img1} alt={artest?.subtitle} />
                                 </div>
                                 <div className="artest-name">
                                     <h4 className="title">
-                                        {artest?.artestName?.length > 14 ? `${artest?.artestName?.slice(0,14)}...`: artest?.artestName}
+                                        {artest?.subtitle?.length > 14 ? `${artest?.subtitle?.slice(0,14)}...`: artest?.subtitle}
                                     </h4>
                                 </div>
                             </div>
