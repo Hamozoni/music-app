@@ -19,7 +19,7 @@ const ArtestsCard = ({ data })=> {
                             <div 
                                 key={i} 
                                 className="artest-box" 
-                                onClick={()=> navigate(`/artest/${artest?.artists}`)}
+                                onClick={()=> navigate(`/artest/${artest?.artists[0]?.adamid}`)}
                                 >
                                 <div className="artest-avatar">
                                     <img src={artest?.images?.background  ? artest?.images?.background : img1} alt={artest?.subtitle} />

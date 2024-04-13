@@ -9,39 +9,27 @@ const TopSongsByAtrest = ({id}) => {
 
     const [artesTopSongs,setArtesTopSongs] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
-    const [isError,setIsError] = useState(false);
-    const [error,setError] = useState("");
+    const [error,setError] = useState(null);
   
     useEffect(() => {
-        setIsError(false);
+        setError(null);
         setIsLoading(true);
         setArtesTopSongs([]);
         shazamData4(`artists/get-top-songs?id=${id}`)
         .then( data => {
-            const trackData = data.data.data;
-            for(let i = 0; i <  trackData.length; i++){
-              setArtesTopSongs((prev)=>{
-                    return [...prev,
-                    {
-                        artestImg: trackData[i]?.attributes?.artwork?.url.replace("{w}x{h}","200x200"),
-                        artestName: trackData[i]?.attributes?.artistName,
-                        songTitle: trackData[i]?.attributes?.name,
-                        audioSrc  : trackData[i]?.attributes?.previews ? trackData[i]?.attributes?.previews[0]?.url : "unknown",
-                        songKey: trackData[i]?.id,
-                        artists: id,
-                    }]
-                })
-            }
-            setIsLoading(false);
+            setArtesTopSongs(data.data.data);
+            console.log(data)
         })
         .catch((error)=>{
-          setIsError(true);
           setError(error);
+        })
+        .finally(()=> {
+           setIsLoading(false);
         })
     }, [id]);
 
   return (
-    isError ? <Error error={error} /> :
+    error ? <Error error={error} /> :
     <>
       {
         isLoading ? <Loading /> : 

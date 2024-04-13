@@ -31,7 +31,7 @@ const Chart = ({ title, data , pFrom })=> {
                         <div className="chart-image"  
                             onClick={()=> setCurrentSong(setState,state,data,i,pFrom)} 
                             >
-                            <img src={chart?.artestImg ? chart?.artestImg : img1} alt={chart?.songTitle} />
+                            <img src={chart?.images?.background ? chart?.images?.background : img1} alt={chart?.title} />
                             <div
                                 className={state.playingFrom === pFrom &&
                                 state?.isSongPlaying && i === state.songIndex ? 
@@ -48,14 +48,14 @@ const Chart = ({ title, data , pFrom })=> {
                         </div>
                         <div className="chart-titles">
                             <h4 className="title" 
-                                onClick={()=> navigate(`/song/${chart?.songKey}`)}
+                                onClick={()=> navigate(`/song/${chart?.key}`)}
                              >
-                                {chart?.songTitle }
+                                {chart?.title }
                             </h4>
                             <h4 className="subtitle"
-                                onClick={()=> navigate(chart.artists !== null && `/artest/${chart.artists}`)}
+                                onClick={()=> navigate(chart.artists !== null && `/artest/${chart.artists[0].adamid}`)}
                             >
-                                {chart?.artestName}
+                                {chart?.subtitle}
                             </h4>
                         </div>
                     </div>
