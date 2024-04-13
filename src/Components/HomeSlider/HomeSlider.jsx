@@ -20,7 +20,7 @@ const HomeSlider = ({ data })=> {
              <div className="img-box flex-box">
                 {data?.map((img,i)=>(
                    <div key={img?.i} className={i % 2 === 0 ? "active img-container" : "img-container" }>
-                        <img src={img?.artestImg ? img?.artestImg : image1} alt={img?.songTitle}/> 
+                       <img src={img?.images?.background ? img?.images?.background : image1} alt={img?.title} />
                     </div> 
                  
                 ))
