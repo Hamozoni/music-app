@@ -20,47 +20,48 @@ const Artest = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [albumId,setAlbumId] = useState(null);
-  const [isError,setIsError] = useState(false);
-  const [error,setError] = useState("");
+  const [error,setError] = useState(null);
 
 
   useEffect(()=>{
     setIsLoading(true);
-    setIsError(false);
+    setError(null);
     shazamData(`artists/get-details?id=${id}`)
     .then((data)=>{
         setAlbumId(data?.data?.data[0]);
-        setIsLoading(false);
+    })
+    .then(()=> {
+      shazamData1(`artists/get-latest-release?id=${id}`)
+      .then( data => {
+        setLatestSongs(data.data.data)
+      })
+      .catch((error)=>{
+        setError(error);
+      });
+    })
+    .then(()=> {
+      shazamData2(`artists/get-summary?id=${id}`)
+      .then((data) => {
+        setArtestDetails(data?.data?.resources);
+      })
+      .catch((error)=>{
+        setError(error);
+      });
     })
     .catch((error)=>{
-      setIsError(true);
       setError(error);
-    });
+    })
+    .finally(()=> {
+       setIsLoading(false)
+    })
 
-    shazamData1(`artists/get-latest-release?id=${id}`)
-    .then( data => {
-      setLatestSongs(data.data.data)
-      setIsLoading(false);
-    })
-    .catch((error)=>{
-      setIsError(true);
-      setError(error);
-    });
 
-    shazamData2(`artists/get-summary?id=${id}`)
-    .then((data) => {
-      setArtestDetails(data?.data?.resources);
-      setIsLoading(false);
-    })
-    .catch((error)=>{
-      setIsError(true);
-      setError(error);
-    });
+
 
   },[id]);
 
   return (
-    isError ? <Error error={error} /> :
+    error ? <Error error={error} /> :
     <div className="artest">
       {
         isLoading ? <Loading /> :

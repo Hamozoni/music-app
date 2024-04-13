@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { shazamData4 } from "../../Utils/Fetch";
 import Loading from "../Loading/Loading";
-import ChartCarts from "../ChartCarts/ChartCarts";
 import Error from "../Error/Error";
+import SongCard from "../SongCard/SongCard";
 
 
 const TopSongsByAtrest = ({id}) => {
@@ -33,10 +33,11 @@ const TopSongsByAtrest = ({id}) => {
     <>
       {
         isLoading ? <Loading /> : 
-        <ChartCarts
+        <SongCard
           data={artesTopSongs}
           title={`top songs by ${artesTopSongs[0]?.artestName}`}
           pFrom={"artestTopS"}
+          artistId={id}
       />
       }
     </>  
