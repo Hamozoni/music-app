@@ -17,7 +17,7 @@ const Home = ()=> {
 
     const {state} = useContext(globalSates);
 
-    const title = "Global Top 20 Chart";
+    const title = "Global Top 200 Chart";
 
     const [chartsData,setChartsData] = useState([]);
     const [isLoading,setIsloading] = useState(false);
