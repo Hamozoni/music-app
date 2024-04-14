@@ -16,8 +16,7 @@ import { globalSates } from "../../Context/Context";
 const TopNav = ({ data })=> {
     console.log(data)
     const {state,setState} = useContext(globalSates);
-    const [isError,setIsError] = useState(false);
-    const [error,setError] = useState("");
+    const [error,setError] = useState(null);
 
     const navigate = useNavigate();
     const {country = "global", city = "all", genres = "all"} = useParams();
@@ -34,8 +33,7 @@ const TopNav = ({ data })=> {
         isLoading: true, 
     });
 
-    useEffect(()=>{
-        setIsError(false);
+    useEffect(()=>{;
         setSetting({...setting,isLoading: true});
         shazamData3(`charts/list`)
         .then((data)=>{
@@ -46,12 +44,13 @@ const TopNav = ({ data })=> {
                 filteredCountryList :  data?.data?.countries,
                 chartList :  data?.data,
                 genresList : data?.data?.global?.genres,
-                isLoading : false
             });
         })
         .catch(error => {
-            setIsError(true);
             setError(error);
+        })
+        .finally(()=> {
+            setSetting({...setting,isLoading: false});
         })
     },[]);
 
@@ -103,7 +102,7 @@ const TopNav = ({ data })=> {
     })
 
     return (
-        isError ? <Error error={error} /> :
+        error ? <Error error={error} /> :
         <nav className="top-nav">
             <div className="container">       
                 <div className="nav-container">
