@@ -14,7 +14,7 @@ import Error from "../Error/Error";
 import { globalSates } from "../../Context/Context";
 
 const TopNav = ({ data })=> {
-
+    console.log(data)
     const {state,setState} = useContext(globalSates);
     const [isError,setIsError] = useState(false);
     const [error,setError] = useState("");
@@ -39,6 +39,7 @@ const TopNav = ({ data })=> {
         setSetting({...setting,isLoading: true});
         shazamData3(`charts/list`)
         .then((data)=>{
+       
             setSetting({
                 ...setting,
                 counteryList: data?.data?.countries,
@@ -229,7 +230,7 @@ const TopNav = ({ data })=> {
                     {
                         data?.map((img,i)=>(
                             <div key={i} className="img-box">
-                                <img src={img.artestImg ? img.artestImg : image} alt={img?.songTitle} />
+                                <img src={img.images.background ? img.images.background : image} alt={img?.title} />
                             </div>
                         ))
                     }
