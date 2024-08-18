@@ -19,11 +19,11 @@ const Chart = ()=> {
     useEffect(()=> {
             setIsloading(true);
             setError(null);
-            shazamData4(`charts/track?listId=${id}`)
+            shazamData4(`charts/list?listId=${id}`)
             .then((data)=> {
                
-                setChartsData(data.data.tracks);
-                console.log(data);
+                setChartsData(data.data.countries);
+                console.log(data.data);
             })
             .catch((error)=>{
                 setError(error);
@@ -31,7 +31,7 @@ const Chart = ()=> {
             .finally(()=> {
                 setIsloading(false)
             })
-    },[id]);
+    },[id]); 
 
     return (
         error ? <Error error={error} /> :
