@@ -23,7 +23,7 @@ const Chart = ()=> {
             .then((data)=> {
                
                 setChartsData(data.data.tracks);
-                console.log(data.data?.tracks);
+                console.log(data);
             })
             .catch((error)=>{
                 setError(error);
