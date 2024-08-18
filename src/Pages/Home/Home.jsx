@@ -25,7 +25,7 @@ const Home = ()=> {
      
     useEffect(()=> {
             setIsloading(true);
-            shazamData5(`charts/track?listId=${state?.listId}`)
+            shazamData5(`charts/list?listId=${state?.listId}`)
             .then((data)=> {
                 console.log(data);
                 setChartsData(data.data.tracks)
