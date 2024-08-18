@@ -14,12 +14,13 @@ import Error from "../Error/Error";
 import { globalSates } from "../../Context/Context";
 
 const TopNav = ({ data })=> {
-    console.log(data)
+
     const {state,setState} = useContext(globalSates);
     const [error,setError] = useState(null);
 
     const navigate = useNavigate();
-    const {country = "global", city = "all", genres = "all"} = useParams();
+    const {country = "global", city = "all", genres = "all",id} = useParams();
+
     const [setting,setSetting] = useState({
         chartList: null,
         counteryList: null,
@@ -35,7 +36,7 @@ const TopNav = ({ data })=> {
 
     useEffect(()=>{;
         setSetting({...setting,isLoading: true});
-        shazamData3(`charts/list`)
+        shazamData3(`charts/list?listId=${id}`)
         .then((data)=>{
        
             setSetting({
