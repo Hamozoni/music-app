@@ -31,7 +31,7 @@ const Context = ({children})=> {
         songLength: 0,
         playingFrom: "chart",
         isPause: true,
-        listId: "genre-global-chart-2"
+        listId: "104382921"
       });
 
     return (

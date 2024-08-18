@@ -27,7 +27,7 @@ const Home = ()=> {
             setIsloading(true);
             shazamData5(`charts/track?listId=${state?.listId}`)
             .then((data)=> {
-                console.log(data?.data?.tracks);
+                console.log(data);
                 setChartsData(data.data.tracks)
                 
             })
