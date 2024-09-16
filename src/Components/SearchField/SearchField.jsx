@@ -14,36 +14,32 @@ const SearchField = ()=> {
     const [showSearchInput,setShowSearchInput] = useState(false);
 
     const  navigate  = useNavigate();
-    const searchInput = useRef();
 
     const [tracks,setTracks] = useState([]);
     const [artists,setArtists] = useState([]);
     const [isloading,setIsloading] = useState(true);
-    const [isError,setIsError] = useState(false);
-    const [error,setError] = useState("");
+    const [error,setError] = useState(null);
 
     const searchHandler = ()=>{
-        searchInput.current.focus();
-    };
-
-     useEffect(()=>{
-        setIsError(false);
+        setError(null);
+        setIsloading(true);
+        setShowSearchInput(true);
         if (searchInputValue.length > 2){
             setIsloading(true);
             shazamData2(`search?term=${searchInputValue}`)
             .then( data => {
                 setTracks(data?.data?.tracks?.hits);
                 setArtists(data?.data?.artists?.hits);
-                setIsloading(false);
-                console.log(data?.data);
-    
             })
             .catch( error => {
-                setIsError(true);
                 setError(error);
-            });
+            })
+            .finally(()=> {
+                setIsloading(false);
+            })
         }
-     },[searchInputValue]);
+    };
+
 
      const handleNavigating = (href)=> { 
         navigate(href)
@@ -52,7 +48,7 @@ const SearchField = ()=> {
 
      const SearchResults = ()=> {
         return (
-            isError ? <Error error={error} /> :
+            error ? <Error error={error} /> :
             <div className="search-field">
                 {
                     searchInputValue.length ? 
@@ -143,16 +139,9 @@ const SearchField = ()=> {
                 <SearchRoundedIcon className='search' />
         </button>
         <input
-            ref={searchInput}
             className='search'
             type="text"
-            placeholder="search..."
-            onFocus={()=> setShowSearchInput(true)}
-            onBlur={()=> {
-                setTimeout(()=>{
-                    setShowSearchInput(false)
-                },400)
-            }}
+            placeholder="discover music..."
             onChange={(e)=> setSearchInputValue(e.target.value)}
         />
         {

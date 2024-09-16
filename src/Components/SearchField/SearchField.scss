@@ -12,7 +12,7 @@
     width: 100%;
     max-height: 450px;
     overflow-y: auto;
-    background-color: #ffffff6b;
+    background-color: #ffffffb7;
     padding: 15px;
     box-shadow: -4px 5px 20px 0px rgba(153, 147, 147, 0.6705882353);
     border-radius: 5px;
@@ -61,7 +61,7 @@
     height: 40px;
     background-color: #ffffff28;
     border: 1px solid rgb(240, 240, 240);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 0 5px -2px #00000061;
     position: relative;
     button {
@@ -80,5 +80,9 @@
         padding: 0 5px;
         background-color: inherit;
         color: #fff;
+    }
+    input::placeholder {
+
+        color: #bbb8b8;
     }
 }

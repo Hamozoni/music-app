@@ -9,19 +9,20 @@
    align-items: center;
    justify-content: center;
    .content {
+      max-width: 680px;
       background-color: rgba(0, 0, 0, 0.274);
       padding: 15px;
       border-radius: 6px;
       border: 1px solid rgb(0, 0, 0);
       h3 {
          color:  white;
-         font-size: 28px;
+         font-size: 32px;
          text-transform: capitalize;
          margin-bottom: 10px;
       }
       p {
          color:  white;
-         font-size: 18px;
+         font-size: 22px;
          text-transform: capitalize;
          margin-bottom: 10px;
       }
