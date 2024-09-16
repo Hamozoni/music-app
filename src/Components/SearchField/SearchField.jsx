@@ -137,7 +137,11 @@ const SearchField = ()=> {
 
     return (
      <div className="search-box">
-        <button onClick={searchHandler} ><SearchRoundedIcon className='search' /></button>
+        <button 
+            onClick={searchHandler} 
+            >
+                <SearchRoundedIcon className='search' />
+        </button>
         <input
             ref={searchInput}
             className='search'
