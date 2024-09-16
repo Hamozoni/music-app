@@ -10,7 +10,8 @@ const Home = ()=> {
             className="home"
             >
                 <div className="content">
-                    <h3>discover music, tracks, and artists easily with our search tool. </h3>
+                    <h3 >discover music, tracks, and artists easily with our search tool. </h3>
+                    <p>find your favorittes or explore new sounds - the music world is at your fingertips.</p>
 
                 </div>
 
