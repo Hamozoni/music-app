@@ -7,7 +7,12 @@ const Home = ()=> {
     return (
         <div 
             style={{backgroundImage: `url(${homeImage})`}} 
-            className="home">
+            className="home"
+            >
+                <div className="content">
+                    <h3>discover music, tracks, and artists easily with our search tool. </h3>
+
+                </div>
 
         </div>
     )

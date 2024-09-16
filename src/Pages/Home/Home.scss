@@ -3,5 +3,16 @@
 .home {
    min-height: 100vh;
    background-repeat: no-repeat;
-   object-fit: cover;
+   object-fit: contain;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   .content {
+      background-color: rgba(0, 0, 0, 0.274);
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid rgb(141, 141, 141);
+      
+   }
 } 
