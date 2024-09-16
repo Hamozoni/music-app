@@ -1,10 +1,15 @@
 import "./Home.scss";
+import homeImage from "../../Assets/woman-listening-to-music-with-headphones.avif"
 
 const Home = ()=> {
 
 
     return (
-        <div className=""></div>
+        <div 
+            style={{backgroundImage: `url(${homeImage})`}} 
+            className="home">
+
+        </div>
     )
 };
 
