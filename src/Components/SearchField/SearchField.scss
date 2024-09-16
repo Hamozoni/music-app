@@ -1,3 +1,9 @@
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .search-field {
     position: absolute;
     z-index: 9999999 !important;
@@ -45,5 +51,23 @@
             width: 70px;
             height: 70px;
         }
+    }
+}
+.search-box {
+    @extend %flex;
+    height: 35px;
+    background-color: #fff;
+    padding: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px -2px #00000061;
+    position: relative;
+    button {
+        height: 100%;
+        background-color: inherit;
+    }
+    input {
+        font-size: 16px !important;
+        height: 100%;
+        background-color: inherit;
     }
 }

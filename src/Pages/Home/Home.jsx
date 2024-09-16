@@ -1,5 +1,6 @@
 import "./Home.scss";
 import homeImage from "../../Assets/woman-listening-to-music-with-headphones.avif"
+import SearchField from "../../Components/SearchField/SearchField";
 
 const Home = ()=> {
 
@@ -12,7 +13,7 @@ const Home = ()=> {
                 <div className="content">
                     <h3 >discover music, tracks, and artists easily with our search tool. </h3>
                     <p>find your favorittes or explore new sounds - the music world is at your fingertips.</p>
-
+                    <SearchField />
                 </div>
 
         </div>
