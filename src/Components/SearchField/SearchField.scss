@@ -56,20 +56,25 @@
 .search-box {
     @extend %flex;
     height: 40px;
-    background-color: #ffffff48;
-    border: 1px solid rgba(240, 240, 240, 0.747);
-    padding: 0 10px;
+    background-color: #ffffff28;
+    border: 1px solid rgb(240, 240, 240);
     border-radius: 10px;
     box-shadow: 0 0 5px -2px #00000061;
     position: relative;
     button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
         height: 100%;
         background-color: inherit;
+        color: #fff;
     }
     input {
         flex: 1;
         font-size: 16px !important;
         height: 100%;
         background-color: inherit;
+        color: #fff;
     }
 }
