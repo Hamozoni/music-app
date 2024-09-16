@@ -6,7 +6,6 @@ import Footer from './Layouts/Footer/Footer';
 import Header from './Layouts/Header/Header';
 import { useContext} from 'react';
 import ArtestAlbums from './Pages/ArtestAlbums/ArtestAlbums';
-import Chart from './Pages/Chart/Chart';
 import AudioPlayer from './Layouts/AudioPlayer/AudioPlayer';
 import { globalSates } from './Context/Context';
 
@@ -23,7 +22,6 @@ const App = ()=> {
             <Route path='/artest/:id' element={<Artest />}/>
             <Route path='/artest/:artistId/albums/:id' element={<ArtestAlbums />}/>
             <Route path='/song/:id' element={<Song />}/>
-            <Route path='/chart/:country/:city/:genres/:id' element={<Chart />}/>
         </Routes>
           <Footer />
           { 
