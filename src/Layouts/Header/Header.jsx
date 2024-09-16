@@ -1,23 +1,17 @@
 import MusicNoteRoundedIcon from '@mui/icons-material/MusicNoteRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
+import SearchField  from "../../Components/SearchField/SearchField"
 import './Header.scss'
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchField from '../../Components/SearchField/SearchField';
-import { useEffect, useRef, useState } from 'react';
 
 const Header = ()=> {
 
-    const navigate = useNavigate();
-    const [searchInputValue,setSearchInputValue] = useState("")
-    const [showSearchInput,setShowSearchInput] = useState(false);
 
-    const searchInput = useRef();
+
     const header = useRef();
+    const  navigate  = useNavigate();
 
-    const searchHandler = ()=>{
-        searchInput.current.focus();
-    };
 
     useEffect(()=>{
 
@@ -42,27 +36,7 @@ const Header = ()=> {
                     <span> <MusicNoteRoundedIcon /></span>  
                     <h1 onClick={()=> navigate("/")}>MYH</h1>
                 </div>
-                <div className="search-box">
-                    <button onClick={searchHandler} ><SearchRoundedIcon className='search' /></button>
-                    <input
-                       ref={searchInput}
-                        className='search'
-                        type="text"
-                        placeholder="search..."
-                        onFocus={()=> setShowSearchInput(true)}
-                        onBlur={()=> {
-                            setTimeout(()=>{
-                                setShowSearchInput(false)
-                            },400)
-                        }}
-                        onChange={(e)=> setSearchInputValue(e.target.value)}
-                    />
-                    {
-                        showSearchInput ? 
-                        <SearchField setShowSearchInput={setShowSearchInput} searchInput={searchInputValue}/> : ""
-                    }
-                    
-                </div>
+                <SearchField />
             </div>
         </header>
     )
