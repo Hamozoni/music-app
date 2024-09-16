@@ -28,7 +28,7 @@ const SearchField = ()=> {
 
      useEffect(()=>{
         setIsError(false);
-        if (searchInputValue.length){
+        if (searchInputValue.length > 2){
             setIsloading(true);
             shazamData2(`search?term=${searchInputValue}`)
             .then( data => {
