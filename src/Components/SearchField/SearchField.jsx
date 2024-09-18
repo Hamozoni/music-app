@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import "./SearchField.scss";
 import { shazamData2 } from "../../Utils/Fetch";
 import Loading from "../Loading/Loading"
@@ -50,6 +50,9 @@ const SearchField = ()=> {
         return (
             error ? <Error error={error} /> :
             <div className="search-field">
+                <p onClick={()=> setShowSearchInput(false)}>
+                    {/* <RxCross1 /> */}jjjjj
+                </p>
                 {
                     searchInputValue.length ? 
                  <>
