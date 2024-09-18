@@ -5,11 +5,12 @@
 }
 
 .search-field {
-    position: absolute;
+    position: fixed;
     z-index: 9999999 !important;
-    left: 0;
-    top: 45px;
-    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,50%);
+    width: 680px;
     max-height: 450px;
     overflow-y: auto;
     background-color: #ffffffb7;
