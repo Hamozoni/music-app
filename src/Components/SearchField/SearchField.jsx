@@ -4,6 +4,7 @@ import { shazamData2 } from "../../Utils/Fetch";
 import Loading from "../Loading/Loading"
 import { useNavigate } from "react-router-dom";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import CloseIcon from '@mui/icons-material/Close';
 import image1 from "../../Assets/no-results.png";
 import Error from "../Error/Error";
 
@@ -51,7 +52,7 @@ const SearchField = ()=> {
             error ? <Error error={error} /> :
             <div className="search-field">
                 <p onClick={()=> setShowSearchInput(false)}>
-                    {/* <RxCross1 /> */}jjjjj
+                    <CloseIcon />
                 </p>
                 {
                     searchInputValue.length ? 
