@@ -21,11 +21,3 @@ export const getAudioData = (setState,isP,plS,sInd,sLen,pFr,isPau,LId)=>{
     setState(audioData);
 
 }
-
-// isSongPlaying: false,
-// playingSong: [],
-// songIndex: 0,
-// songLength: 0,
-// playingFrom: "chart",
-// isPause: true,
-// listId: "genre-global-chart-2"
