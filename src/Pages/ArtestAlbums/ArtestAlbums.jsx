@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { shazamData3 } from "../../Utils/Fetch"
+
+import { shazamData3 } from "../../Utils/Fetch";
+
 import Loading from "../../Components/Loading/Loading";
 import ChartCarts from "../../Components/ChartCarts/ChartCarts";
-
-import "./ArtestAlbums.scss";
 import EditorP from "./EditorP/EditorP";
 import AlbumsCard from "../../Components/AlbumsCard/AlbumsCard";
 import Error from "../../Components/Error/Error";
 
+import "./ArtestAlbums.scss";
 
 const ArtestAlbums = ()=> {
 
