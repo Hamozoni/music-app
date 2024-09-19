@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import { shazamData,shazamData1,shazamData2} from "../../Utils/Fetch";
+
 import AudiotrackRoundedIcon from "@mui/icons-material/AudiotrackRounded";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
-import "./Artest.scss";
-import img1 from "../../Assets/audio-2.jpg";
-import { useParams } from "react-router-dom";
+
 import Loading from "../../Components/Loading/Loading";
 import AlbumsCard from "../../Components/AlbumsCard/AlbumsCard";
 import LatestAlbum from "../../Components/AlbumsCard/LatestAlbum";
 import TopSongsByAtrest from "../../Components/TopSongsByArtest/TopSongsByArtest";
 import Error from "../../Components/Error/Error";
+
+import "./Artest.scss";
+import img1 from "../../Assets/audio-2.jpg";
 
 const Artest = () => {
 
@@ -54,9 +58,6 @@ const Artest = () => {
     .finally(()=> {
        setIsLoading(false)
     })
-
-
-
 
   },[id]);
 
