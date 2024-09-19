@@ -37,7 +37,6 @@ const Song = ()=> {
         setSongData([])
         shazamData(`songs/get-details?key=${id}`)
         .then(data => {
-            console.log(data)
             if(data){
                 setSongDetainls(data?.data);
                 setSongData([
@@ -61,7 +60,6 @@ const Song = ()=> {
         setSongData2([])
         shazamData1(`songs/v2/get-details?id=${id}`)
         .then(data => {
-            console.log(data)
             if(!data?.data?.errors){
                 setSongDetainls2(data?.data?.data[0]);
                 setSongData2([
