@@ -7,7 +7,7 @@ const Home = ()=> {
 
     return (
         <div 
-            style={{backgroundImage: `url(${homeImage})`}} 
+            style={{backgroundImage: `#00000056, url(${homeImage})`}} 
             className="home"
             >
                 <div className="content">
