@@ -1,5 +1,5 @@
 import "./Home.scss";
-import homeImage from "../../Assets/woman-listening-to-music-with-headphones.avif"
+import homeImage from "../../Assets/equalizer.png"
 import SearchField from "../../Components/SearchField/SearchField";
 
 const Home = ()=> {
